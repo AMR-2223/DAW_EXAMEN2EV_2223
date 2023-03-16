@@ -39,20 +39,28 @@ namespace ExamenLoto
         private void btGenerar_Click(object sender, EventArgs e)
         {
             miLoto = new LotoAMR2223(); // usamos constructor vacío, se genera combinación aleatoria
-            for ( int i=0; i<6; i++ )
+            for (int i = 0; i < 6; i++)
                 combinacion[i].Text = Convert.ToString(miLoto.Numeros[i]);
         }
 
         private void btValidar_Click(object sender, EventArgs e)
         {
-            int[] nums = new int[6];    
-            for (int i = 0; i < 6; i++)
-                nums[i] = Convert.ToInt32(combinacion[i].Text);
-            miLoto = new LotoAMR2223(nums);
-            if (miLoto.combinacionValida)
-                MessageBox.Show("Combinación válida");
-            else
-                MessageBox.Show("Combinación no válida");
+            try
+            {
+                int[] nums = new int[6];
+                for (int i = 0; i < 6; i++)
+                    nums[i] = Convert.ToInt32(combinacion[i].Text);
+                miLoto = new LotoAMR2223(nums);
+                if (miLoto.combinacionValida)
+                    MessageBox.Show("Combinación válida");
+                else
+                    MessageBox.Show("Combinación no válida");
+            }
+
+            catch (ArgumentOutOfRangeException error)
+            {
+                MessageBox.Show("Los números introducidos no son válidos." + error.Message);
+            }
         }
 
         private void btComprobar_Click(object sender, EventArgs e)

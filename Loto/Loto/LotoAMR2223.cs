@@ -60,7 +60,7 @@ namespace LotoClassNS
         /// <summary>
         /// <para>
         /// Crea una combinación pasando el conjunto de números
-        /// misnums es un array de enteros con la combinación que quiero crear
+        /// misnumeros es un array de enteros con la combinación que quiero crear
         /// </para>
         /// <paramref name="misnumeros">
         /// combinación con la que queremos inicializar la clase
@@ -76,23 +76,31 @@ namespace LotoClassNS
                 {
                     int j;
                     for (j = 0; j < i; j++)
+                    { 
                         if (misnumeros[i] == Numeros[j])
-                            break;
+                        {
+                            break;                    
+                        }
+                    }
                     if (i == j)
+                    {
                         Numeros[i] = misnumeros[i]; // validamos la combinación
+                    }
                     else
                     {
-                        combinacionValida = false;
-                        return;
+                        // combinacionValida = false; // 
+                        throw new ArgumentOutOfRangeException("El número introducido tiene que estar entre 1 y 49");
                     }
                 }
                 else
                 {
-                    combinacionValida = false;     // La combinación no es válida, terminamos
-                    return;
+                    // combinacionValida = false;     // La combinación no es válida, terminamos
+                    throw new ArgumentOutOfRangeException("El número introducido tiene que estar entre 1 y 49");
                 }
             }
             combinacionValida = true;
+            //TODO Probablemente el booleano "combinacionValida" se puede simplificar o eliminar,
+            //una vez creados los throw new para las excepciones
         }
 
         /// <summary>
