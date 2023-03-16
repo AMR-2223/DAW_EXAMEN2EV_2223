@@ -1,6 +1,6 @@
 ﻿namespace ExamenLoto
 {
-    partial class Form1
+    partial class Examen2EVAMR2223
     {
         /// <summary>
         /// Variable del diseñador necesaria.

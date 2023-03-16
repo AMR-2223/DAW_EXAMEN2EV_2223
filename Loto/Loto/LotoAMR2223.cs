@@ -8,7 +8,7 @@ namespace LotoClassNS
     /// </summary>
     // Clase que almacena una combinación de la lotería
     //
-    public class loto
+    public class LotoAMR2223
     {
         // definición de constantes
         public const int MAX_NUMEROS = 6;
@@ -25,7 +25,7 @@ namespace LotoClassNS
 
         // En el caso de que el constructor sea vacío, se genera una combinación aleatoria correcta
         //
-        public loto()
+        public LotoAMR2223()
         {
             Random r = new Random();    // clase generadora de números aleatorios
 
@@ -49,7 +49,7 @@ namespace LotoClassNS
 
         // La segunda forma de crear una combinación es pasando el conjunto de números
         // misnums es un array de enteros con la combinación que quiero crear (no tiene porqué ser válida)
-        public loto(int[] misnums)  // misnumeros: combinación con la que queremos inicializar la clase
+        public LotoAMR2223(int[] misnums)  // misnumeros: combinación con la que queremos inicializar la clase
         {
             for (int i=0; i<MAX_NUMEROS; i++)
                 if (misnums[i]>=NUMERO_MENOR && misnums[i]<=NUMERO_MAYOR) {
