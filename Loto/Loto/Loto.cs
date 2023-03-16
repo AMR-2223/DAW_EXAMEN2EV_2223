@@ -2,6 +2,10 @@
 
 namespace LotoClassNS
 {
+
+    /// <summary>
+    /// 
+    /// </summary>
     // Clase que almacena una combinación de la lotería
     //
     public class loto
