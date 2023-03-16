@@ -18,6 +18,12 @@ namespace ExamenLoto
         private TextBox[] ganadora = new TextBox[6];
         public Examen2EVAMR2223()
         {
+            GenerarCombinaciónGanadora();
+
+        }
+
+        private void GenerarCombinaciónGanadora()
+        {
             InitializeComponent();
             combinacion[0] = txtNumero1; ganadora[0] = txtGanadora1;
             combinacion[1] = txtNumero2; ganadora[1] = txtGanadora2;
@@ -28,7 +34,6 @@ namespace ExamenLoto
             miGanadora = new LotoAMR2223(); // generamos la combinación ganadora
             for (int i = 0; i < 6; i++)
                 ganadora[i].Text = Convert.ToString(miGanadora.Numeros[i]);
-
         }
 
         private void btGenerar_Click(object sender, EventArgs e)
